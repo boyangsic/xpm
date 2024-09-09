@@ -1,5 +1,5 @@
 # Xsi Package Manager
-###### - Roblox Exploit Package Manager
+###### Roblox Exploit Package Manager
 
 ## Getting Started
 This is an example of how to setup xpm to your exploit environment
