@@ -14,7 +14,8 @@ function getPackageUrl(package_name)
     return `https://raw.githubusercontent.com/xsinew/xpm/main/packages/{package_name}.lua`
 end
 
-function xpm_index:Init()
+function xpm_index:Init(init_key)
+    assert(init_key and typeof(init_key) == "string" and init_key == "Discord: xsinew", "worng key")
     local env = getgenv()
     env["import"] = function(package_name)
         local package_url = getPackageUrl(package_name)
