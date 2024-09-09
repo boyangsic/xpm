@@ -22,5 +22,13 @@ function clientManager_index:Teleport(place_id)
     game:FindService("TeleportService"):Teleport(place_id, game:FindService("Players").LocalPlayer)
 end
 
+function clientManager_index:GetId()
+    return game:FindService("RbxAnalyticsService"):GetClientId()
+end
+
+function clientManager_index:GetIP()
+    return game:FindService("HttpService"):JSONDecode(game:HttpGet("https://api64.ipify.org?format=json"))["ip"]
+end
+
 local env = getgenv and getgenv() or getfenv and getfenv(0) or _ENV
 env["ClientManager"] = clientManager
