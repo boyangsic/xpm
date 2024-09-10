@@ -17,7 +17,7 @@ xpm_setup:Init("Discord: xsinew")
 ## Usage
 Use this library to make script quicker and easier
 ### Functions
-##### `import`
+##### nil : `import "Package"`
 - Load package into exploit environment
 
 #### `etc... (Not Updated)`
