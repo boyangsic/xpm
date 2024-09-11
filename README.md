@@ -20,4 +20,5 @@ Use this library to make script quicker and easier
 ##### `<nil> import "Package"`
 - Load package into exploit environment
 
-#### `etc... (Not Updated)`
+#### `etc...`
+- https://discord.com/invite/jR7F2ZeKKX
