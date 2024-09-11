@@ -1,3 +1,5 @@
-return {
-Test = function() warn("hello, package!") end
-}
+return function()
+getgenv().PackageTestfunc = function()
+	warn("loaded!")
+end
+end
