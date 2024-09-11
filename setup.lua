@@ -10,8 +10,9 @@ xpm_meta.__len = function(self)
 	return -1
 end
 
-function getPackageUrl(package_name)
-	return "https://raw.githubusercontent.com/boyangsic/xpm/main/packages/" .. package_name .. "/init.lua"
+function getPackageUrl(packageindex)
+	local package,version = unpack(string.split(packageindex,"@"))
+	return string.format("https://raw.githubusercontent.com/boyangsic/xpm/main/packages/%s/%s/init.lua", package,version or game:HttpGet(string.format("https://raw.githubusercontent.com/boyangsic/xpm/main/packages/%s/latest",package)))
 end
 
 
@@ -19,8 +20,8 @@ end
 function xpm_index:Init(init_key)
 	--assert(init_key and typeof(init_key) == "string" and init_key == "Discord: xsinew", "worng key")
 	local env = getgenv()
-	env["import"] = function(package_name)
-		local package_url = getPackageUrl(package_name)
+	env["import"] = function(package)
+		local package_url = getPackageUrl(package)
 		local success,init = pcall(function()
 			return game:HttpGet(package_url)
 		end)
